@@ -48,7 +48,7 @@ header {
 }
 
 .search::placeholder {
-  color: #1d1d1f;
+  color: #1a1919;
 }
 .search:focus {
   outline: 0;
@@ -58,6 +58,19 @@ header {
 main {
   display: flex;
   flex-wrap: wrap;
+}
+
+@media (max-width: 663px) {
+  main {
+    display: flex;
+    justify-content: center;
+  }
+}
+@media (max-width: 997px) {
+  main {
+    display: flex;
+    justify-content: space-around;
+  }
 }
 
 .movie {
@@ -107,7 +120,9 @@ main {
 }
 
 .overview {
-  background-color: #fff;
+  background-color: var(--primary-color);
+  color: #fff;
+  overflow: auto;
   padding: 2rem;
   position: absolute;
   left: 0;
@@ -117,6 +132,23 @@ main {
   transform: translateY(101%);
   transition: transform 0.3s ease-in;
 }
+
 .movie:hover .overview {
   transform: translateY(0);
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--secondary-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
